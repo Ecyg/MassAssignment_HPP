@@ -26,6 +26,7 @@ if (!in_array($page, $allowed_pages)) {
         <a href="index.php?page=home">Home</a>
         <a href="/vulnerable_app.php">Mass Assignment</a>
         <a href="/xss_hpp.php">XSS via HTTP Parameter Pollution</a>
+        <a href="/type_juggling.php">Type Juggling</a>
     </nav>
     
     <div>
