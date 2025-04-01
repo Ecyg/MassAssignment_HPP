@@ -25,3 +25,17 @@ Steps to test :
 2. Try to get XSS via the first "message" parameter.
 
 3. Try adding a second message parameter. 
+
+
+Type Juggling
+-------------------------------------------------------------------------------
+
+Steps to test : 
+
+1. Go to the Type Juggling page
+
+2. Attempt to login as "admin" with the password "123456"
+
+3. Now login with the password "0"
+
+4. Why did that work?
