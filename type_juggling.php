@@ -1,8 +1,8 @@
 <?php
-// Simulated user database (INSECURE: Plaintext passwords)
+// Simulated user database (INSECURE: Weak password storage)
 $users = [
-    "admin" => "123456",  // Admin password is purely numeric
-    "user" => "password"  // Regular user
+    "admin" => "0e123456789",  // Looks like a hash, but it's actually numeric in PHP's eyes
+    "user" => "password123"
 ];
 
 // Process login form submission
@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
 
-    // Insecure Type Juggling comparison (loose == instead of strict ===)
+    // Insecure authentication check using `==` (Type Juggling Vulnerability)
     if (isset($users[$username]) && $users[$username] == $password) {
         $message = "✅ Welcome, " . htmlspecialchars($username) . "!";
     } else {
@@ -47,3 +47,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 </body>
 </html>
+
